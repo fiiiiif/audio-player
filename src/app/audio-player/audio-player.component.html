@@ -1,0 +1,21 @@
+<div class="photo" [style.background-image]="cover | backgroundImage"></div>
+<div class="controls">
+    <button type="button" class="previous" (click)="previous.emit()">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M13,6V18L21.5,12M4,18L12.5,12L4,6V18Z" />
+        </svg>
+    </button>
+    <button type="button" (click)="toggle()">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M8,5.14V19.14L19,12.14L8,5.14Z" *ngIf="!playing" />
+            <path d="M14,19H18V5H14M6,19H10V5H6V19Z" *ngIf="playing" />
+        </svg>
+    </button>
+    <button type="button" (click)="next.emit()">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M13,6V18L21.5,12M4,18L12.5,12L4,6V18Z" />
+        </svg>
+    </button>
+</div>
+<div class="track-fill" [style.transform]="trackScale$ | async"></div>
+<div class="track-background"></div>
